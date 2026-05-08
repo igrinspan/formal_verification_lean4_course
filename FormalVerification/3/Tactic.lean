@@ -45,7 +45,7 @@ theorem dne (P : Prop) : ¬ (¬ P) -> P := by
 theorem add_zero_left (n : Nat) : 0 + n = n := by
   induction n with
   | zero => rfl
-  | succ n ih => 
+  | succ n ih =>
     have h : 0 + (n + 1) = (0 + n) + 1 := by exact (Nat.add_assoc 0 n 1)
     rw [h]
     rw [ih]
